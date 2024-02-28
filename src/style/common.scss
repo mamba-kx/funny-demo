@@ -1,0 +1,85 @@
+// 背景图片地址和大小
+@mixin bg($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 背景图片地址和大小
+@mixin bgSize($url, $size: 100%, $position: center) {
+  background: url($url) no-repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+//定位全屏
+@mixin allcover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-justify-content: $type;
+  justify-content: $type;
+}
+
+@mixin dfc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kr-body-hidden {
+  overflow: hidden;
+}
+
+// combat项目1125px设计稿
+@function combat2rem($px) {
+  @return $px * 0.0066666666666667rem;
+}
+
+// 文字超出处理
+@mixin textOverflow($lineClamp: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lineClamp;
+}
