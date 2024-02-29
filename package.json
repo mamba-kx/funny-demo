@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && script/deploy.sh"
   },
   "dependencies": {
     "@codemirror/lang-html": "^6.4.8",

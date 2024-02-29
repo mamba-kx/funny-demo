@@ -2,6 +2,7 @@ import { h } from "vue";
 import { AppstoreOutlined } from "@ant-design/icons-vue";
 import TextBlendSpreadVue from "../components/css/text_blend_spread.vue";
 import TestGraduallyAppear from "../components/css/test_gradually_appear.vue";
+import BorderRepeatGradient from "../components/css/border_repeat_gradient.vue";
 import { CODE_DETAIL } from "../constants/code";
 
 export const MENU_LIST = [
@@ -24,6 +25,13 @@ export const MENU_LIST = [
         title: "文字逐渐出现",
         comp: TestGraduallyAppear,
         code: CODE_DETAIL["文字逐渐出现"]
+      },
+      {
+        key: "4",
+        label: "重复渐变边框",
+        title: "重复渐变边框",
+        comp: BorderRepeatGradient,
+        code: CODE_DETAIL["重复渐变边框"]
       }
     ]
   }
