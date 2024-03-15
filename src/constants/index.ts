@@ -1,37 +1,34 @@
-import { h } from "vue";
-import { AppstoreOutlined } from "@ant-design/icons-vue";
-import TextBlendSpreadVue from "../components/css/text_blend_spread.vue";
-import TestGraduallyAppear from "../components/css/test_gradually_appear.vue";
-import BorderRepeatGradient from "../components/css/border_repeat_gradient.vue";
-import { CODE_DETAIL } from "../constants/code";
+import { BookOutlined, SettingOutlined } from "@ant-design/icons-vue";
 
-export const MENU_LIST = [
+export const SETTING_LIST = [
   {
-    key: "1",
-    icon: () => h(AppstoreOutlined),
-    label: "css效果",
-    title: "css效果",
+    id: 1,
+    label: "知识点",
+    icon: BookOutlined
+  },
+  {
+    id: 2,
+    label: "设置",
+    icon: SettingOutlined
+  }
+];
+
+export const KNOWLEDGE_LIST = [
+  {
+    label: "知识点",
+    width: "100px",
     children: [
       {
-        key: "2",
-        label: "文字交融展开",
-        title: "文字交融展开",
-        comp: TextBlendSpreadVue,
-        code: CODE_DETAIL["文字交融展开"]
+        type: "group",
+        label: "css动画",
+        value: "1",
+        path: "/knowledge/css"
       },
       {
-        key: "3",
-        label: "文字逐渐出现",
-        title: "文字逐渐出现",
-        comp: TestGraduallyAppear,
-        code: CODE_DETAIL["文字逐渐出现"]
-      },
-      {
-        key: "4",
-        label: "重复渐变边框",
-        title: "重复渐变边框",
-        comp: BorderRepeatGradient,
-        code: CODE_DETAIL["重复渐变边框"]
+        type: "group",
+        label: "js相关",
+        value: "2",
+        path: "/knowledge/js"
       }
     ]
   }

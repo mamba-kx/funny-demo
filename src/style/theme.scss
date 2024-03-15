@@ -1,5 +1,16 @@
 // 全局样式
 $bgcolor: #001529;
-$color: #1990ff;
 $menuWidth: 200px;
 $codeWidth: 500px;
+$settingheight: 60px;
+$headerHeight: 60px;
+
+html[theme="dark"] {
+  --primary-bgColor: #000;
+  --primary-textColor: #fff;
+}
+
+:root {
+  --primary-bgColor: #fff;
+  --primary-textColor: #000;
+}

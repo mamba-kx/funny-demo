@@ -1,6 +1,6 @@
 <template>
   <codemirror
-    v-model="props.code"
+    v-model="code"
     placeholder="Code goes here..."
     :style="{ height: '100%' }"
     :autofocus="true"
@@ -19,15 +19,21 @@
 import { Codemirror } from "vue-codemirror";
 import { vue } from "@codemirror/lang-vue";
 import { oneDark } from "@codemirror/theme-one-dark";
-import { shallowRef } from "vue";
-import { log } from "../utils/index";
+import { ref, shallowRef, watchEffect } from "vue";
+import { log } from "../../../../../utils/index";
+import { CSS_MENU_LIST } from "../../constants/index";
+import { useStore } from "../../../../../store";
 
+const store = useStore();
+const code = ref();
 const vue_extensions = [vue(), oneDark];
 const view = shallowRef();
-const props = defineProps({
-  code: {
-    type: String
-  }
+
+watchEffect(() => {
+  CSS_MENU_LIST.forEach(item => {
+    const res = item.children.filter(i => i.key === store.key.cssSelectedKey[0]);
+    code.value = res[0].code;
+  });
 });
 
 const handleReady = (payload: any) => {

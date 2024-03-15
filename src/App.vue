@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import Main from "./pages/index.vue";
+import Main from "./views/index.vue";
 </script>
 
 <style lang="scss">
